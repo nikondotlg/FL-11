@@ -1,0 +1,323 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+@mixin flex($dir) {
+  display: flex;
+  flex-direction: $dir;
+}
+$font-wgt: ("regular": 400, "medium": 600, "bold": 700);
+
+
+body {
+  background: $main-bg-clr;
+}
+
+header {
+  color: $header-text-clr;
+  background: $bg-main;
+  width: 100%;
+  height: 900px;
+  z-index: 1;
+  border-bottom-right-radius: 40% 40%;
+
+  .header-wrap {
+    @include flex(column);
+    align-items: space-between;
+    padding: 0px 190px;
+
+    .landing-logo {
+      @include flex(row);
+      margin-top: 25px;
+
+      img {
+        height: 55px;
+      }
+
+      p {
+        font-size: 30px;
+        font-weight: map-get($font-wgt, "medium");
+        margin-left: 20px;
+      }
+
+      span {
+        display: block;
+        font-size: 14px;
+        font-weight: 200;
+        text-align: center;
+      }
+    }
+
+    .header_heading {
+      font-family: $font-1;
+      margin-top: 90px;
+      font-weight: 800;
+      line-height: 1;
+      font-size: 90px;
+      max-width: 700px;
+
+      &::after {
+        content: "";
+        width: 380px;
+        height: 30px;
+        display: block;
+        margin: -25px 0px 0px 0px;
+        background: $pseudo-clr;
+      }
+    }
+
+    .header_text {
+      font-family: $font-1;
+      line-height: 30px;
+      letter-spacing: 1.4px;
+      white-space: pre-line;
+      font-size: 18px;
+      margin-top: 40px;
+      padding-bottom: 0px;
+    }
+
+    button {
+      margin-top: 75px;
+      width: 180px;
+      height: 60px;
+      color: $white-clr;
+      background: $button-clr;
+      border: none;
+      font-size: 20px;
+      font-weight: 600;
+      border-radius: 7px;
+      &:hover {
+        background: darken($color: $button-clr, $amount: 10%);
+      }
+    }
+  }
+}
+
+main {
+  height: 990px;
+  font-family: $font-1;
+  color: $header-text-clr;
+  background: $main-bg-clr;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .section_text {
+    font-weight: 500;
+    font-size: 52px;
+    letter-spacing: 1px;
+    margin-top: 48px;
+    margin-bottom: 10px;
+    z-index: 4;
+
+    &::after {
+      content: '';
+      width: 235px;
+      height: 18px;
+      display: block;
+      margin: -28px 0px 0px 275px;
+      background: $pseudo-clr;
+      z-index: -1;
+    }
+  }
+
+  .section_card_wrap {
+    width: 1540px;
+    @include flex(row);
+    justify-content: center;
+    margin-top: 35px;
+
+    .section_card {
+      @include flex(column);
+      width: 500px;
+      height: 570 - 20px;
+      align-items: center;
+      text-align: center;
+      background: $prim-1-clr;
+      margin: 0px 10px;
+      padding-top: 25px;
+      border-radius: 7px;
+      font-size: 16px;
+      color: $white-clr;
+      font-weight: normal;
+
+      .section_card_img {
+
+        object-fit: cover;
+        height: 295px;
+        width: 450px;
+        border-radius: 10px;
+
+      }
+
+      .section_card_heading {
+        justify-items: center;
+        font-size: 30px;
+        color: $white-clr;
+        padding-top: 25px;
+        padding-bottom: 5px;
+      }
+
+      .section_card_underline {
+        width: 100%;
+        height: 10px;
+        display: block;
+        margin: -12px auto;
+        background: $pseudo-clr;
+      }
+
+      .section_card_text {
+        text-align: center;
+        font-family: $font-1;
+        letter-spacing: 1.2px;
+        line-height: 30px;
+        font-size: 18px;
+        Padding: 20px 20px;
+      }
+    }
+
+  }
+
+
+
+
+  .section_banner {
+    z-index: 15;
+    color: $header-text-clr;
+    height: 180px;
+    width: 1200px;
+    background: linear-gradient(to right, $button-clr, $banner-gradient-end);
+    @include flex(row);
+    align-items: center;
+    margin-top: 180px;
+    padding-bottom: 50px;
+    border-radius: 10px;
+
+    .section_banner_text_wrap {
+
+      .section_banner_heading {
+        font-family: $font-2;
+        font-size: 36px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        padding-top: 30px;
+        padding-left: 130px;
+
+        &::after {
+          content: "";
+          width: 80px;
+          height: 15px;
+          display: block;
+          margin: -25px 0px 10px 150px;
+          padding: 0px -0px;
+          background: $pseudo-clr;
+          z-index: -1;
+
+        }
+      }
+
+      .section_banner_text {
+        font-family: $font-2;
+        font-size: 18px;
+        letter-spacing: 0.9px;
+        padding-top: 12px;
+        padding-left: 130px;
+        color: $white-clr;
+      }
+    }
+
+    button {
+      height: 60px;
+      width: 180px;
+      background: $button-clr;
+      color: $white-clr;
+      font-family: $font-1;
+      font-size: 22px;
+      text-align: center;
+      border: none;
+      border-radius: 7px;
+      margin-top: 46px;
+      margin-left: 255px;
+
+      &:hover {
+        background: lighten($color: $button-clr, $amount: 10%);
+      }
+    }
+  }
+}
+
+
+footer {
+  height: 300px;
+  background: $prim-1-clr;
+
+  .footer-wrap {
+    @include flex(column);
+    align-items: space-between;
+    padding: 0px 190px;
+    color: $footer-text-clr;
+    @extend .landing-logo;
+
+    .landing-logo {
+      @include flex(row);
+      margin-top: 170px;
+      width: 200px;
+
+      img {
+        height: 60px;
+      }
+
+      p {
+        font-size: 30px;
+        font-weight: 600;
+        margin-left: 20px;
+      }
+
+      span {
+        display: block;
+        font-size: 14px;
+        font-weight: 200;
+        text-align: center;
+      }
+    }
+  }
+
+  .footer_text {
+
+    font-family: $font-2;
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    width: 400px;
+    margin-left: 530px;
+    margin-top: -70px;
+
+
+  }
+
+  .footer-cr {
+    width: 400px;
+    font-family: $font-2;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    margin-left: 1300px;
+    margin-top: -50px;
+  }
+
+}
