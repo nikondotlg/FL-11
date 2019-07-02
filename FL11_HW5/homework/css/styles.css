@@ -251,7 +251,7 @@ main article:nth-child(even) {
 }
 .footer-left, .footer-right {
   padding: 35px 35px;
-  color: #fff;
+  color: rgba(255,255,255,0.5);
   font-size: 18px;
   font-weight: 100;
   line-height: 25px;
@@ -446,15 +446,21 @@ main article:nth-child(even) {
   }
   .main-footer {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
   }
   .footer-left, .footer-right {
-    padding: 35px 35px;
-    color: #fff;
+    padding: 25px 35px;
+    padding-bottom: 20px;
+    color: rgba(255,255,255,0.5);
     font-size: 18px;
     font-weight: 100;
     line-height: 25px;
+    text-align: center;
+  }
+  .footer-right {
+    padding-top: 15px;
+    padding-bottom: 40px;
   }
   nav {
     display: none;
@@ -739,5 +745,23 @@ main article:nth-child(even) {
       grid-template-areas:
         "main"
         "aside";
+    }
+    .main-footer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .footer-left, .footer-right {
+      padding: 25px 35px;
+      padding-bottom: 20px;
+      color: rgba(255,255,255,0.5);
+      font-size: 18px;
+      font-weight: 100;
+      line-height: 25px;
+      text-align: center;
+    }
+    .footer-right {
+      padding-top: 15px;
+      padding-bottom: 40px;
     }
   }
