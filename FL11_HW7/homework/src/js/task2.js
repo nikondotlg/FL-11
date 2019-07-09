@@ -1,62 +1,50 @@
+const maxAttempts = 3;
+const num1 = 100;
+const num2 = 50;
+const num3 = 25;
+const wins = [num1, num2, num3];
+const half = 2;
+const maxNumAdd = 4;
+
 if (confirm('Do you want to play a game?')) {
-  const minNum = 0;
-  const stepNum = 4;
-  const prize1 = 100;
-  const prize2 = 50;
-  const prize3 = 25;
-  const prizes = [prize1, prize2, prize3];
-  let totalPrize = 0;
-  const entryMaxNum = 8;
-  let maxNum = 8;
-  let randomInt = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
-  console.log(randomInt);
-  let givenGuesses = 3;
-  let mult = 1;
-  const entryMult = 1;
-  const half = 2;
-  let possiblePrize = 0;
-  let attemptsLeft = 3;
-  const entryAttemptsLeft = 3;
-
-  for (let i = 0; i < givenGuesses; i++) {
-    possiblePrize = prizes[i];
-    possiblePrize *= mult;
-    console.log(`possibbleprize is : ${possiblePrize}`);
-    let userNumInput = +prompt(`Choose a roulette pocket number from 0 to 8. 
-    Attempts left: ${attemptsLeft}
-    Total prize: ${totalPrize}
-    Possible prize on current attempt: ${possiblePrize}$`);
-    attemptsLeft--;
-    console.log(`totalprize is : ${totalPrize}`);
-    if (userNumInput === randomInt) {
-      totalPrize = totalPrize + possiblePrize;
-      if (confirm(`Congratulation, you won! Your prize is: ${totalPrize} $. Do you want to continue?`)) {
-        maxNum = maxNum + stepNum;
-        randomInt = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
-        i = 0;
-        attemptsLeft = entryAttemptsLeft;
-        mult = mult * half;
-      } else {
-        alert(`Thank you for your participation. Your prize is ${totalPrize} $.`);
-        if (confirm('Do you want to play again?')) {
-          maxNum = entryMaxNum;
-          randomInt = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
-          i = 0;
-          attemptsLeft = entryAttemptsLeft;
-          mult = entryMult;
-        } else {
-          console.log('breaking;');
-          break;
+    let totalAmount = 0;
+    const minNum = 0;
+    let maxNum = 8;
+    let chosenNumber = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+    console.log('chosenNumber', chosenNumber);
+    let multiplier = 1;
+    for (let i = 1; i <= maxAttempts; i++) {
+        const promptMessage = `Choose a roulette pocket number from ${minNum} to ${maxNum}. 
+            Attempts left: ${maxAttempts + 1 - i}
+            Total prize: ${totalAmount}
+            Possible prize on current attempt: ${wins[i - 1] * multiplier}$`;
+        if (+prompt(promptMessage) === chosenNumber) {
+            totalAmount += wins[i - 1] * multiplier;
+            console.log('totalAmount', totalAmount);
+            if (confirm(`Congratulation, you won! Your prize is: ${totalAmount} $. Do you want to continue?`)) {
+                i = 0;
+                multiplier = multiplier * half;
+                maxNum += maxNumAdd;
+                chosenNumber = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+            } else {
+                alert(`Thank you for your participation. Your prize is ${totalAmount} $.`);
+                if (confirm(`Do you want to play again?`)) {
+                    i = 0;
+                    multiplier = multiplier * half;
+                    maxNum += maxNumAdd;
+                    chosenNumber = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+                } else {
+                    break;
+                }
+            }
         }
-      }
-    } else if (attemptsLeft > 0) {
-      continue;
-
-    } else if (attemptsLeft === 0) {
-      alert(`Thank you for your participation. Your prize is ${totalPrize} $.`);
+        if (i === maxAttempts) {
+            alert(`Thank you for your participation. Your prize is ${totalAmount} $.`);
+            if (confirm(`Do you want to play again?`)) {
+                i = 0;
+            }
+        }
     }
-  }
-
 } else {
-  alert('You did not become a billionaire, but can.');
+    alert('You did not become a billionaire, but can.');
 }
