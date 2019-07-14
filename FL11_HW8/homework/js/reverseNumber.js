@@ -13,10 +13,3 @@ reverseNumber(123);
 reverseNumber(-456);
 reverseNumber(1000);
 
-// v1
-// let reversedNum = (num < 0) ? "-" : "";
-//   num = String(Math.abs(num));
-//   for (let i = num.length - 1; i >= 0; --i) {
-//     reversedNum += num[i];
-//   }
-//   return Number(reversedNum)
