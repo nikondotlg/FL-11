@@ -1,2 +1,133 @@
-/* Your styles goes here */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+.material-icons.md-light { color: rgb(200, 200, 200); }
+.material-icons.md-light.md-inactive { color: rgba(200, 200, 200, 0.3); }
+
+#root {
+  margin: 0 auto;
+  max-width: 50%;
+}
+
+.main-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  color: rgb(93, 158, 255);
+}
+
+.main-header h1 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 25px;
+}
+
+.inputForm {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.inputForm input {
+  width: 900px;
+  height: 30px;
+  flex-basis: 600px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(216, 216, 216);
+  margin-right: 10px;
+}
+
+.inputForm button {
+  padding: 0px;
+  background-color: transparent;
+  border: 0px solid rgb(216, 216, 216);
+}
+.inputForm i {
+  color: #7d7d7d;
+}
+
+hr {
+  height: 5px;
+  border: 0;
+  background-color: rgb(214, 232, 255);
+  margin-bottom: 20px;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 100px;
+  padding: 10px 0px;
+}
+
+.notif {
+  margin: 5px;
+  text-align: center;
+  visibility: hidden;
+}
+.hidden {
+  display: none;
+}
+
+input[type=checkbox] {
+  zoom: 1.5;
+  margin-right: 10px;
+  background-color: white;
+  color: white;
+  
+}
+.list-item i {
+  padding: 0px 10px;
+}
+.icn-delete {
+  margin: 0 0 0 auto;
+  color: #7d7d7d;
+}

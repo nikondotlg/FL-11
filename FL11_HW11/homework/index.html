@@ -1,14 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework 11 - TODO Cat List</title>
   <link rel="stylesheet" href="./assets/material-icons/material-icons.css">
   <link rel="stylesheet" href="./assets/styles.css">
 </head>
+
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <header class="main-header">
+      <h1>TODO Cat List</h1>
+      <p class="notif">Maximum item per list are created</p>
+      <form class="inputForm">
+        <input type="text" name="task" id="inputTask" placeholder="Add new action">
+        <button type="submit" class="addTaskBtn" disabled>
+          <i class="material-icons md-48 md-light submit-btn">add_box</i>
+        </button>
+      </form>
+    </header>
+    <hr>
+    <section class="todo">
+      <ul class="todo-list">
+        <li draggable="true" class="list-item">
+            <input type="checkbox" name="todo_item" id="checkbox-1">
+            <label for="checkbox">Find the cat</label>
+            <input type="text" name="edit-item-1" id="edit-1" class="hidden edit-itm">
+            <i class="material-icons icn-save hidden">save</i>
+            <i class="material-icons icn-edit">edit</i>
+            <i class="material-icons icn-delete">delete</i>
+        </li>
+        <li draggable="true" class="list-item">
+            <input type="checkbox" name="todo_item" id="checkbox-2">
+            <label for="checkbox">Love the cat</label>
+            <input type="text" name="edit-item-2" id="edit-2" class="hidden edit-itm">
+            <i class="material-icons icn-save hidden">save</i>
+            <i class="material-icons icn-edit">edit</i>
+            <i class="material-icons icn-delete">delete</i>
+        </li>
+        <li draggable="true" class="list-item">
+            <input type="checkbox" name="todo_item" id="checkbox-3">
+            <label for="checkbox">Bathe the cat</label>
+            <input type="text" name="edit-item-3" id="edit-3" class="hidden edit-itm">
+            <i class="material-icons icn-save hidden">save</i>
+            <i class="material-icons icn-edit">edit</i>
+            <i class="material-icons icn-delete">delete</i>
+        </li>
+      </ul>
+      
+    </section>
+  </div>
 
   <script src="./src/app.js"></script>
 </body>
+
 </html>
